@@ -1102,7 +1102,7 @@ function pg_cmd_getaa(args) {
 			}
 			continue;
 		}
-		if (gid != null && gene_type_dict[gid] !== "protein_coding") continue;
+		if ((gtype != null && gtype !== "protein_coding") || (gid != null && gene_type_dict[gid] !== "protein_coding")) continue;
 		if (canon_only && !canon) continue;
 		if (excl_decay && ttype !== "protein_coding") continue;
 		if (!keep_thru && thru) continue;
